@@ -3,3 +3,4 @@ venv/*
 urlabridge/db.sqlite3
 **__pycache**
 **/__pycache/**
+__pycache__/

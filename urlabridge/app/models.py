@@ -13,5 +13,8 @@ class Path(models.Model):
     redirect_from = models.CharField(max_length=5000)
     redirect_to = models.CharField(max_length=1000)
 
+    class Meta:
+        unique_together = ('domain', 'redirect_from')
+
     def __str__(self):
         return '{}/{} -> {}'.format(self.domain, self.redirect_from, self.redirect_to)

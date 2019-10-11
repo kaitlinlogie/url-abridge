@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Domain, Path
+from django.db import connection
 
 
 def index(request):
@@ -7,4 +9,6 @@ def index(request):
 
 
 def redirect(request, path):
-    return HttpResponse("Hello there, your path is {}".format(path))
+    host_domain = Domain.objects.get(domain='bepure.co')
+    redirect_path = Path.objects.get(redirect_from=path, domain=host_domain)
+    return HttpResponse("Redirect from: {}, redirect to: {}".format(redirect_path.redirect_from, redirect_path.redirect_to))
