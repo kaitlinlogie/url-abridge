@@ -8,3 +8,4 @@ cd urlabridge
 python manage.py migrate
 echo "Please create a super user account"
 python manage.py createsuperuser
+echo "When deploying to prod make sure you set the URLABRIDGE_SECRET_KEY and URLABRIDGE_DEBUG environment variables."
