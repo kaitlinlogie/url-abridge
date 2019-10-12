@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'li@4)09v43&!b=p#n1z!59=cm-^$%@hc@zz%cwl3b7e0!7_488'
+SECRET_KEY = os.environ.get('URLABRIDGE_SECRET_KEY', 'set_this_when_deploying_in_prod')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('URLABRIDGE_DEBUG', True)
 
 ALLOWED_HOSTS = []
 
