@@ -5,3 +5,4 @@ urlabridge/db.sqlite3
 **__pycache**
 **/__pycache/**
 __pycache__/
+urlabridge/app/__pycache__/**
