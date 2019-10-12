@@ -1,4 +1,5 @@
 venv/*
+.vscode/*
 .idea/*
 urlabridge/db.sqlite3
 **__pycache**
