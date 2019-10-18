@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('URLABRIDGE_SECRET_KEY', 'set_this_when_deploying_in
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('URLABRIDGE_DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
