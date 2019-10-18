@@ -14,5 +14,9 @@ def page_redirect(request, path):
     try:
         redirect_path = Path.objects.get(redirect_from=path, domain=host_domain)
     except exceptions.ObjectDoesNotExist:
-        return HttpResponse('This path has not been configured yet. Sign into the admin panel and set it up there.')
+        default_path = Path.objects.get(domain=host_domain).default_redirect_to
+        if default_path:
+            return redirect(default_path)
+        else:
+            return HttpResponse('This path has not been configured yet. Sign into the admin panel and set it up there.')
     return redirect(redirect_path.redirect_to)

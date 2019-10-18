@@ -12,6 +12,7 @@ class Path(models.Model):
     domain = models.ForeignKey(Domain, on_delete=models.CASCADE)
     redirect_from = models.CharField(max_length=5000)
     redirect_to = models.CharField(max_length=1000)
+    default_redirect_to = models.CharField(max_length=1000, null=True, blank=True)
 
     class Meta:
         unique_together = ('domain', 'redirect_from')
